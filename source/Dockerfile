@@ -42,6 +42,7 @@ ADD fix-permissions.sh /usr/local/bin/fix-permissions.sh
 ADD requirements.txt /home/requirements.txt
 
 ENV HOME /home/$NB_USER
+RUN pip install --upgrade pip
 RUN pip3 install -r /home/requirements.txt \
     && pip3 install jupyter jupyterhub notebook \ 
     && jupyter nbextension enable --py widgetsnbextension --sys-prefix \
